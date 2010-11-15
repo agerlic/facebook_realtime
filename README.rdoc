@@ -1,0 +1,47 @@
+== Facebook RealTime
+
+Facebook RealTime is a rails wrapper around facebook Real-time Update API.
+
+== Facebook Real-Time Update API
+
+<http://developers.facebook.com/docs/api/realtime>
+
+== Facebook Graph API
+
+For an overview of what this is all about, see <http://developers.facebook.com/docs/api>.
+
+== Installation
+
+=== Create new Controller 
+Controller must inherite from FacebookRealTime::SubscriptionsController
+
+* check method will be used to add new subscriptions
+* endpoint method will receive updates from facebook
+
+=== Add two routes :get and :post
+
+open your routes.rb and add
+* match '/endpoint' => 'controller_name#check', :via => [:get]
+* match '/endpoint' => 'controller_name#endpoint', :via => [:post]
+
+=== Create variables :
+* FB['app_id'] : facebook application id
+* FB['app_key'] : facebook application key
+* FB['app_secret'] : facebook application secret
+* FB['app_verify_token'] : verify token used for subscriptions
+
+
+== Deploy your app
+Before using gem you have to deploy a valid check method, to add new subscriptions
+
+Use rake tasks :
+* rake fb:rt:list to show your subscriptions
+* rake fb:rt:delete to delete all your subscription
+* rake fb:rt:subscribe to add a new subscription
+* params:
+* * object
+* * * facebook object name eg : user, ...
+* * fields: 
+* * * list of fields with ',' as separator eg : "likes, info"
+* * callback_url: 
+* * * url bringing to your check method
