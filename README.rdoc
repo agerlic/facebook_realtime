@@ -39,9 +39,9 @@ Use rake tasks :
 * rake fb:rt:delete to delete all your subscription
 * rake fb:rt:subscribe to add a new subscription
 * params:
- * object
-  * facebook object name eg : user, ...
- * fields: 
-  * list of fields with ',' as separator eg : "likes, info"
- * callback_url: 
-  * url bringing to your check method
+	* object
+		* facebook object name eg : user, ...
+	* fields: 
+		* list of fields with ',' as separator eg : "likes, info"
+	* callback_url: 
+		* url bringing to your check method
