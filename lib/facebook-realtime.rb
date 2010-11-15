@@ -1,5 +1,4 @@
-module Facebook
-  module Realtime
-    # Your code goes here...
-  end
+module FacebookRealTime
+  require "facebook-realtime/railtie" if defined?(Rails)
+  require "facebook-realtime/subscribe"
 end

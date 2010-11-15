@@ -1,5 +1,3 @@
-module Facebook
-  module Realtime
-    VERSION = "0.0.1"
-  end
+module FacebookRealTime
+  VERSION = "0.0.1"
 end
