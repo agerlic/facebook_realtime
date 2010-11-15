@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = FacebookRealTime::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['agerlic']
-  s.email       = ['alex@minesee.com']
+  s.email       = ['agerlic@nilptr.com']
   s.homepage    = "http://rubygems.org/gems/facebook-realtime"
   s.summary     = %q{Facebook RealTime Update Library}
   s.description = %q{Facebook RealTime Update Library}
