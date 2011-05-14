@@ -4,31 +4,30 @@ Facebook RealTime is a rails wrapper around facebook Real-time Update API.
 
 == Facebook Real-Time Update API
 
-<http://developers.facebook.com/docs/api/realtime>
+http://developers.facebook.com/docs/api/realtime
 
 == Facebook Graph API
 
-For an overview of what this is all about, see <http://developers.facebook.com/docs/api>.
+For an overview of what this is all about, see http://developers.facebook.com/docs/api.
 
 == Installation
 
 === Create new Controller 
-Controller must inherite from FacebookRealTime::SubscriptionsController
+Controller must inherit FacebookRealTime::SubscriptionsController
 
-* check method will be used to add new subscriptions
-* endpoint method will receive updates from facebook
+* facebook_check is a callback URL to which Facebook will get subscription validation.
+* facebook_update is callback URL to which Facebook will post subscription updates.
 
 === Add two routes :get and :post
 
 open your routes.rb and add
-* match '/endpoint' => 'controller_name#check', :via => [:get]
-* match '/endpoint' => 'controller_name#endpoint', :via => [:post]
+* match '/endpoint' => 'controller_name#facebook_check', :via => [:get]
+* match '/endpoint' => 'controller_name#facebook_update', :via => [:post]
 
 === Create variables :
-* FB['app_id'] : facebook application id
-* FB['app_key'] : facebook application key
-* FB['app_secret'] : facebook application secret
-* FB['app_verify_token'] : verify token used for subscriptions
+* FB['id'] : facebook application id
+* FB['secret'] : facebook application secret
+* FB['verify_token'] : A subscriber-provided opaque token that will be echoed back in the verification request to assist the subscriber in identifying which subscription request is being verified. If this is not included, no token will be included in the verification request. This is from the PubSubHubbub spec.
 
 
 == Deploy your app
@@ -37,7 +36,7 @@ Before using gem you have to deploy a valid check method, to add new subscriptio
 Use rake tasks :
 * rake fb:rt:list to show your subscriptions
 * rake fb:rt:delete to delete all your subscription
-* rake fb:rt:subscribe to add a new subscription
+* rake fb:rt:subscribe to add or a modify a subscription
 * params
   * object
     * facebook object name eg : user, ...

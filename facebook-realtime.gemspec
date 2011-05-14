@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['agerlic']
   s.email       = ['agerlic@nilptr.com']
-  s.homepage    = "http://rubygems.org/gems/facebook-realtime"
-  s.summary     = %q{Facebook RealTime Update Library}
-  s.description = %q{Facebook RealTime Update Library}
+  s.homepage    = "https://github.com/agerlic/facebook-realtime"
+  s.summary     = %q{Facebook RealTime Updates Gem}
+  s.description = %q{}
 
   s.rubyforge_project = "facebook-realtime"
 
