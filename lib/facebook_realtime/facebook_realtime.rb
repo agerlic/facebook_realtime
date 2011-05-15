@@ -40,5 +40,5 @@ module FacebookRealtime
       oauth_url << "&client_secret=#{FB['secret']}"
       oauth_url << "&grant_type=client_credentials"
       access_token = RestClient.get oauth_url
-  end
+    end
 end
