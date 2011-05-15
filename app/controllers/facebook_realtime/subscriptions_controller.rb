@@ -1,4 +1,5 @@
-class FacebookRealTime::SubscriptionsController < ApplicationController
+module FacebookRealtime
+class SubscriptionsController < ApplicationController
   # Subscription Verification
   # Before subscription addition/modification can complete, 
   # Facebook servers will make an HTTP GET to your callback URL with the following parameters:
@@ -27,4 +28,5 @@ class FacebookRealTime::SubscriptionsController < ApplicationController
   def facebook_update
     raise NotImplementedError.new("facebook realtime endpoint is not implemented.")
   end
+end
 end

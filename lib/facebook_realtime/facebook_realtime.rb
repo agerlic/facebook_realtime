@@ -1,4 +1,4 @@
-module FacebookRealTime
+module FacebookRealtime
     def self.add(object, fields, callback_url)
       add_url = "https://graph.facebook.com/#{FB['id']}"
       add_url << "/subscriptions?#{URI.escape(get_app_access_token)}"
