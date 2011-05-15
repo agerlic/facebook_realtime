@@ -1,5 +1,5 @@
 module FacebookRealtime
-    def self.add(object, fields, callback_url)
+    def add(object, fields, callback_url)
       add_url = "https://graph.facebook.com/#{FB['id']}"
       add_url << "/subscriptions?#{URI.escape(get_app_access_token)}"
       resp = RestClient.post add_url,
@@ -10,7 +10,7 @@ module FacebookRealtime
       puts resp
     end
 
-    def self.delete
+    def delete
       delete_url = "https://graph.facebook.com/#{FB['id']}"
       delete_url << "/subscriptions?#{URI.escape(get_app_access_token)}"
       if object_name != nil
@@ -20,7 +20,7 @@ module FacebookRealtime
       puts resp
     end
 
-    def self.list
+    def list
       list_url = "https://graph.facebook.com/#{FB['id']}"
       list_url << "/subscriptions?#{URI.escape(get_app_access_token)}"
       list = RestClient.get list_url
@@ -28,7 +28,7 @@ module FacebookRealtime
     end
 
     private
-    def self.get_app_access_token
+    def get_app_access_token
       if !FB['id']
         raise NotImplementedError.new("FB['id'] doesn't exist")
       end
